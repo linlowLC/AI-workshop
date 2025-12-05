@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Inlow | Portfolio</title>
+    <style>
+        :root {
+            --primary-color: #A68D5D; /* A soft, gold/tan color from the reference site */
+            --secondary-color: #333;
+            --background-color: #F8F8F8;
+            --text-color: #555;
+            --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-family);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
+        /* --- Header/Navigation --- */
+        header {
+            background-color: #fff;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        nav {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-weight: 500;
+            padding: 10px 15px;
+            display: block;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Main Content Section Styling --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            text-align: center;
+            color: var(--secondary-color);
+            font-size: 2em;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 10px auto 0;
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background-color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid var(--primary-color);
+        }
+
+        #hero h1 {
+            font-size: 3em;
+            margin: 0 0 10px 0;
+            color: var(--secondary-color);
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            color: var(--text-color);
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #8C754C; /* Darker Primary */
+        }
+
+        /* --- Portfolio Grid (Mockup) --- */
+        #portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-card h3 {
+            color: var(--secondary-color);
+            margin: 15px 0 5px 0;
+        }
+
+        .project-card p {
+            padding: 0 15px;
+            font-size: 0.9em;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+        
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">Laura Inlow</a>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <img src="placeholder-profile.jpg" alt="Laura Inlow Profile Picture" class="profile-pic">
+        <h1>Hello, I'm Laura Inlow.</h1>
+        <p>A designer and creative strategist dedicated to visual storytelling and impactful brand experiences.</p>
+        <a href="#portfolio" class="cta-button">View My Work</a>
+    </section>
+
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p style="text-align: center;">I blend **creative design** with **strategic thinking** to deliver projects that are not only beautiful but also effective. With a background in [Your Industry/Specialty], I thrive on solving complex problems through elegant visual solutions. This is where you would place a more detailed bio and mission statement, similar to the reference site's about section.</p>
+    </section>
+    
+    <section id="portfolio" style="background-color: #f0f0f0;">
+        <div class="container">
+            <h2>Featured Work</h2>
+            <div id="portfolio-grid">
+                <div class="project-card">
+                    <img src="placeholder-project1.jpg" alt="Project 1">
+                    <h3>Brand Identity Redesign</h3>
+                    <p>A comprehensive branding project for a local startup, focusing on modern aesthetics and clear communication.</p>
+                </div>
+                <div class="project-card">
+                    <img src="placeholder-project2.jpg" alt="Project 2">
+                    <h3>Web UI/UX Development</h3>
+                    <p>Designed and developed a user-friendly interface for an e-commerce platform, resulting in a 20% increase in conversions.</p>
+                </div>
+                <div class="project-card">
+                    <img src="placeholder-project3.jpg" alt="Project 3">
+                    <h3>Editorial Layout & Print</h3>
+                    <p>Created the full layout and design for a 40-page annual report, including custom infographics and photography.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Get In Touch</h2>
+        <p style="text-align: center;">I'm always open to new collaborations and creative challenges. Feel free to reach out!</p>
+        <p style="text-align: center;">
+            Email: <a href="mailto:hello@laurainlow.com">hello@laurainlow.com</a> |
+            LinkedIn: <a href="#">@laurainlow</a>
+        </p>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Laura Inlow. All rights reserved. <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>

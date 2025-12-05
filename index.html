@@ -3,251 +3,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laura Inlow | Portfolio</title>
+    <title>Laura Inlow | Creative Strategist</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* Define new custom colors */
         :root {
-            --primary-color: #A68D5D; /* A soft, gold/tan color from the reference site */
-            --secondary-color: #333;
-            --background-color: #F8F8F8;
-            --text-color: #555;
-            --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            --color-primary-blue: #0033A0; /* Main Color: Deep Blue */
+            --color-accent-yellow: #ffcb1f; /* Accent Color: Bright Yellow */
+            --color-primary-blue-dark: #002A80; /* Darker Blue for hover */
         }
 
-        body {
-            font-family: var(--font-family);
-            line-height: 1.6;
-            margin: 0;
-            padding: 0;
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-
-        /* --- Header/Navigation --- */
-        header {
-            background-color: #fff;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        nav {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-        }
-
-        nav ul li a {
-            text-decoration: none;
-            color: var(--secondary-color);
-            font-weight: 500;
-            padding: 10px 15px;
-            display: block;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-
-        /* --- Main Content Section Styling --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        section {
-            padding: 60px 0;
-        }
-
-        h2 {
-            text-align: center;
-            color: var(--secondary-color);
-            font-size: 2em;
-            margin-bottom: 40px;
-            position: relative;
-        }
+        /* Primary Blue */
+        .text-primary-blue { color: var(--color-primary-blue); }
+        .bg-primary-blue { background-color: var(--color-primary-blue); }
+        .border-primary-blue { border-color: var(--color-primary-blue); }
+        .hover\:bg-primary-blue-dark:hover { background-color: var(--color-primary-blue-dark); }
         
-        h2::after {
+        /* Accent Yellow */
+        .text-accent-yellow { color: var(--color-accent-yellow); }
+        .hover\:text-accent-yellow:hover { color: var(--color-accent-yellow); }
+
+        /* Custom styling for H2 underline using the new primary blue */
+        h2.after-primary-blue::after {
             content: '';
             display: block;
             width: 50px;
             height: 3px;
-            background-color: var(--primary-color);
+            background-color: var(--color-primary-blue);
             margin: 10px auto 0;
-        }
-
-        /* --- Hero Section --- */
-        #hero {
-            background-color: #fff;
-            text-align: center;
-            padding: 100px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 20px;
-            border: 4px solid var(--primary-color);
-        }
-
-        #hero h1 {
-            font-size: 3em;
-            margin: 0 0 10px 0;
-            color: var(--secondary-color);
-        }
-
-        #hero p {
-            font-size: 1.2em;
-            color: var(--text-color);
-            margin-bottom: 30px;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: white;
-            padding: 10px 25px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-
-        .cta-button:hover {
-            background-color: #8C754C; /* Darker Primary */
-        }
-
-        /* --- Portfolio Grid (Mockup) --- */
-        #portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .project-card {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            padding-bottom: 20px;
-        }
-
-        .project-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .project-card h3 {
-            color: var(--secondary-color);
-            margin: 15px 0 5px 0;
-        }
-
-        .project-card p {
-            padding: 0 15px;
-            font-size: 0.9em;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            margin-top: 40px;
-        }
-        
-        footer a {
-            color: var(--primary-color);
-            text-decoration: none;
         }
     </style>
 </head>
-<body>
+<body class="font-sans text-gray-700 bg-gray-50 antialiased">
 
-    <header>
-        <nav>
-            <a href="#" class="logo">Laura Inlow</a>
-            <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+    <!-- Header and Navigation Bar (Fixed to top for premium feel) -->
+    <header class="sticky top-0 z-10 bg-white shadow-sm border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+            <a href="#" class="text-xl font-bold tracking-tight text-primary-blue logo">
+                Laura Inlow
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="#about" class="text-sm font-medium text-gray-700 hover:text-accent-yellow transition duration-150">About</a></li>
+                <li><a href="#portfolio" class="text-sm font-medium text-gray-700 hover:text-accent-yellow transition duration-150">Portfolio</a></li>
+                <li><a href="#contact" class="text-sm font-medium text-gray-700 hover:text-accent-yellow transition duration-150">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="hero">
-        <img src="placeholder-profile.jpg" alt="Laura Inlow Profile Picture" class="profile-pic">
-        <h1>Hello, I'm Laura Inlow.</h1>
-        <p>A designer and creative strategist dedicated to visual storytelling and impactful brand experiences.</p>
-        <a href="#portfolio" class="cta-button">View My Work</a>
+    <!-- Hero/Introduction Section -->
+    <section id="hero" class="bg-white py-24 text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <!-- Profile Picture with Blue Border -->
+            <img 
+                src="https://placehold.co/150x150/0033A0/FFFFFF?text=LI" 
+                alt="Laura Inlow Profile Picture" 
+                class="w-36 h-36 rounded-full object-cover mx-auto mb-6 border-4 border-primary-blue shadow-lg"
+                onerror="this.onerror=null; this.src='https://placehold.co/150x150/0033A0/FFFFFF?text=LI';"
+            >
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 text-gray-900 leading-tight">
+                Hello, I'm Laura Inlow.
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+                A designer and creative strategist dedicated to visual storytelling and impactful brand experiences.
+            </p>
+            <!-- CTA button with Primary Blue background and Darker Blue hover -->
+            <a href="#portfolio" class="cta-button inline-block bg-primary-blue text-white px-8 py-3 rounded-lg font-semibold tracking-wide shadow-lg transition duration-300 hover:bg-primary-blue-dark hover:shadow-xl">
+                View My Work
+            </a>
+        </div>
     </section>
 
-    <section id="about" class="container">
-        <h2>About Me</h2>
-        <p style="text-align: center;">I blend **creative design** with **strategic thinking** to deliver projects that are not only beautiful but also effective. With a background in [Your Industry/Specialty], I thrive on solving complex problems through elegant visual solutions. This is where you would place a more detailed bio and mission statement, similar to the reference site's about section.</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- H2 with custom blue underline -->
+            <h2 class="after-primary-blue text-3xl font-bold text-gray-900 mb-6 text-center relative">
+                About Me
+            </h2>
+            <p class="text-lg text-gray-600 leading-relaxed text-center">
+                I blend **creative design** with **strategic thinking** to deliver projects that are not only beautiful but also effective. With a background in marketing and visual arts, I thrive on solving complex problems through elegant visual solutions. My focus is on creating seamless, impactful experiences for clients globally.
+            </p>
+        </div>
     </section>
     
-    <section id="portfolio" style="background-color: #f0f0f0;">
-        <div class="container">
-            <h2>Featured Work</h2>
-            <div id="portfolio-grid">
-                <div class="project-card">
-                    <img src="placeholder-project1.jpg" alt="Project 1">
-                    <h3>Brand Identity Redesign</h3>
-                    <p>A comprehensive branding project for a local startup, focusing on modern aesthetics and clear communication.</p>
+    <!-- Portfolio/Work Section -->
+    <section id="portfolio" class="bg-gray-100 py-20 px-4">
+        <div class="max-w-7xl mx-auto">
+            <!-- H2 with custom blue underline -->
+            <h2 class="after-primary-blue text-3xl font-bold text-gray-900 mb-12 text-center relative">
+                Featured Work
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02]">
+                    <img 
+                        src="https://placehold.co/600x400/0033A0/FFFFFF?text=Brand+Identity" 
+                        alt="Brand Identity Redesign" 
+                        class="w-full h-48 object-cover"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x400/0033A0/FFFFFF?text=Brand+Identity';"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Brand Identity Redesign</h3>
+                        <p class="text-sm text-gray-500">A comprehensive branding project for a local startup, focusing on modern aesthetics and clear communication.</p>
+                        <!-- Link with Primary Blue text and Yellow Accent hover -->
+                        <a href="#" class="mt-4 inline-block text-sm text-primary-blue hover:text-accent-yellow font-medium">View Case Study &rarr;</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <img src="placeholder-project2.jpg" alt="Project 2">
-                    <h3>Web UI/UX Development</h3>
-                    <p>Designed and developed a user-friendly interface for an e-commerce platform, resulting in a 20% increase in conversions.</p>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02]">
+                    <img 
+                        src="https://placehold.co/600x400/FFCB1F/0033A0?text=UI%2FUX" 
+                        alt="Web UI/UX Development" 
+                        class="w-full h-48 object-cover"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x400/FFCB1F/0033A0?text=UI%2FUX';"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Web UI/UX Development</h3>
+                        <p class="text-sm text-gray-500">Designed and developed a user-friendly interface for an e-commerce platform, resulting in a 20% increase in conversions.</p>
+                        <!-- Link with Primary Blue text and Yellow Accent hover -->
+                        <a href="#" class="mt-4 inline-block text-sm text-primary-blue hover:text-accent-yellow font-medium">View Case Study &rarr;</a>
+                    </div>
                 </div>
-                <div class="project-card">
-                    <img src="placeholder-project3.jpg" alt="Project 3">
-                    <h3>Editorial Layout & Print</h3>
-                    <p>Created the full layout and design for a 40-page annual report, including custom infographics and photography.</p>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02]">
+                    <img 
+                        src="https://placehold.co/600x400/002A80/FFFFFF?text=Editorial+Design" 
+                        alt="Editorial Layout & Print" 
+                        class="w-full h-48 object-cover"
+                        onerror="this.onerror=null; this.src='https://placehold.co/600x400/002A80/FFFFFF?text=Editorial+Design';"
+                    >
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-800">Editorial Layout & Print</h3>
+                        <p class="text-sm text-gray-500">Created the full layout and design for a 40-page annual report, including custom infographics and photography.</p>
+                        <!-- Link with Primary Blue text and Yellow Accent hover -->
+                        <a href="#" class="mt-4 inline-block text-sm text-primary-blue hover:text-accent-yellow font-medium">View Case Study &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container">
-        <h2>Get In Touch</h2>
-        <p style="text-align: center;">I'm always open to new collaborations and creative challenges. Feel free to reach out!</p>
-        <p style="text-align: center;">
-            Email: <a href="mailto:hello@laurainlow.com">hello@laurainlow.com</a> |
-            LinkedIn: <a href="#">@laurainlow</a>
-        </p>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <!-- H2 with custom blue underline -->
+            <h2 class="after-primary-blue text-3xl font-bold text-gray-900 mb-6 text-center relative">
+                Get In Touch
+            </h2>
+            <p class="text-lg text-gray-600 text-center mb-8">
+                I'm always open to new collaborations and creative challenges. Feel free to reach out!
+            </p>
+            <div class="text-center space-y-4">
+                <p class="text-lg font-medium">
+                    Email: <a href="mailto:hello@laurainlow.com" class="text-primary-blue hover:text-accent-yellow transition duration-150">hello@laurainlow.com</a>
+                </p>
+                <p class="text-lg font-medium">
+                    LinkedIn: <a href="#" class="text-primary-blue hover:text-accent-yellow transition duration-150">@laurainlow</a>
+                </p>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Laura Inlow. All rights reserved. <a href="#">Privacy Policy</a></p>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center text-sm">
+            <!-- Footer links use the Accent Yellow for visibility on the dark background -->
+            <p>&copy; 2025 Laura Inlow. All rights reserved. 
+                <a href="#" class="text-accent-yellow hover:text-white transition duration-150">Privacy Policy</a>
+            </p>
         </div>
     </footer>
 
